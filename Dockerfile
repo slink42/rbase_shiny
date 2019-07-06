@@ -24,7 +24,6 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     chown shiny:shiny /var/lib/shiny-server
 
 ## install debian packages
-RUN add-apt-repository -y ppa:opencpu/imagemagick
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libxml2-dev \
 	libcairo2-dev \
