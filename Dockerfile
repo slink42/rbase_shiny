@@ -1,5 +1,5 @@
 # Base image https://hub.docker.com/u/rocker/
-FROM rocker/r-ver:3.5.3
+FROM rocker/r-ver:3.6.0
 
 RUN apt-get update && apt-get install -y \
     sudo \
@@ -24,6 +24,7 @@ RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION 
     chown shiny:shiny /var/lib/shiny-server
 
 ## install debian packages
+RUN add-apt-repository -y ppa:opencpu/imagemagick
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libxml2-dev \
 	libcairo2-dev \
@@ -37,8 +38,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libmagick++-dev
 
 ## install presentation R-packages
-RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('devtools')"
+RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('readxl')"
 RUN Rscript -e "install.packages('DT')"
 RUN Rscript -e "install.packages('data.table')"
