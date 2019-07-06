@@ -82,6 +82,8 @@ RUN Rscript -e "install.packages('RMySQL')"
 RUN Rscript -e "install.packages('DBI')"
 RUN Rscript -e "install.packages('aws.s3')"
 RUN Rscript -e "install.packages('glue')"
+RUN Rscript -e "install.packages('summarytools')"
+
 
 ## create directories
 RUN mkdir -p /01_input ; \
