@@ -1,5 +1,5 @@
 # Base image https://hub.docker.com/u/rocker/
-FROM rocker/r-ver:3.6.0
+FROM rocker/r-base
 
 RUN apt-get update && apt-get install -y \
     sudo \
@@ -37,6 +37,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libmagick++-dev
 
 ## install presentation R-packages
+RUN Rscript -e "install.packages('tcltk')"
 RUN Rscript -e "install.packages('devtools')"
 RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('readxl')"
