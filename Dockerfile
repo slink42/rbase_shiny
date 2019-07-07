@@ -83,6 +83,7 @@ RUN Rscript -e "install.packages('DBI')"
 RUN Rscript -e "install.packages('aws.s3')"
 RUN Rscript -e "install.packages('glue')"
 RUN Rscript -e "install.packages('summarytools')"
+RUN Rscript -e "install.packages('janitor')"
 
 
 ## create directories
