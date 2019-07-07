@@ -1,5 +1,5 @@
 # Base image https://hub.docker.com/u/rocker/
-FROM rocker/r-base
+FROM rocker/shiny
 
 RUN apt-get update && apt-get install -y \
     sudo \
