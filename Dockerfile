@@ -1,27 +1,5 @@
 # Base image https://hub.docker.com/u/rocker/
-FROM rocker/r-ver:3.5.3
-
-RUN apt-get update && apt-get install -y \
-    sudo \
-    gdebi-core \
-    pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev \
-    libxt-dev \
-    xtail \
-    wget
-
-# Download and install shiny server
-RUN wget --no-verbose https://download3.rstudio.org/ubuntu-14.04/x86_64/VERSION -O "version.txt" && \
-    VERSION=$(cat version.txt)  && \
-    wget --no-verbose "https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-$VERSION-amd64.deb" -O ss-latest.deb && \
-    gdebi -n ss-latest.deb && \
-    rm -f version.txt ss-latest.deb && \
-    . /etc/environment && \
-    R -e "install.packages(c('shiny', 'rmarkdown'), repos='$MRAN')" && \
-    cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/ && \
-    chown shiny:shiny /var/lib/shiny-server
+FROM rocker/shiny
 
 ## install debian packages
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
@@ -37,8 +15,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libmagick++-dev
 
 ## install presentation R-packages
-RUN Rscript -e "install.packages('summarytools')"
+RUN Rscript -e "install.packages('tcltk')"
 RUN Rscript -e "install.packages('devtools')"
+RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('readxl')"
 RUN Rscript -e "install.packages('DT')"
 RUN Rscript -e "install.packages('data.table')"
@@ -62,6 +41,9 @@ RUN Rscript -e "install.packages('plotly')"
 RUN Rscript -e "install.packages('forcats')"
 RUN Rscript -e "install.packages('highcharter')"
 RUN Rscript -e "install.packages('purrr')"
+RUN Rscript -e "install.packages('shinydashboardPlus')"
+RUN Rscript -e "install.packages('leaflet')"
+
 
 ## install processing R-packages
 
@@ -82,6 +64,9 @@ RUN Rscript -e "install.packages('RMySQL')"
 RUN Rscript -e "install.packages('DBI')"
 RUN Rscript -e "install.packages('aws.s3')"
 RUN Rscript -e "install.packages('glue')"
+RUN Rscript -e "install.packages('summarytools')"
+RUN Rscript -e "install.packages('janitor')"
+RUN Rscript -e "install.packages('pool')"
 
 ## create directories
 RUN mkdir -p /01_input ; \
@@ -97,5 +82,3 @@ COPY shiny-server.conf /etc/shiny-server/shiny-server.conf
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 RUN chmod +x /usr/bin/shiny-server.sh
 
-## Expose shiny port ##
-EXPOSE 3838
