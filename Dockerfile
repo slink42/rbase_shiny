@@ -41,6 +41,9 @@ RUN Rscript -e "install.packages('plotly')"
 RUN Rscript -e "install.packages('forcats')"
 RUN Rscript -e "install.packages('highcharter')"
 RUN Rscript -e "install.packages('purrr')"
+RUN Rscript -e "install.packages('shinydashboardPlus')"
+RUN Rscript -e "install.packages('leaflet')"
+
 
 ## install processing R-packages
 
@@ -63,7 +66,7 @@ RUN Rscript -e "install.packages('aws.s3')"
 RUN Rscript -e "install.packages('glue')"
 RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('janitor')"
-
+RUN Rscript -e "install.packages('pool')"
 
 ## create directories
 RUN mkdir -p /01_input ; \
