@@ -67,6 +67,9 @@ RUN Rscript -e "install.packages('glue')"
 RUN Rscript -e "install.packages('summarytools')"
 RUN Rscript -e "install.packages('janitor')"
 RUN Rscript -e "install.packages('pool')"
+RUN Rscript -e "install.packages('googleAuthR')"
+RUN Rscript -e "install.packages('dotenv')"
+
 
 ## create directories
 RUN mkdir -p /01_input ; \
