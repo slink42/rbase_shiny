@@ -44,6 +44,11 @@ RUN Rscript -e "install.packages('purrr')"
 RUN Rscript -e "install.packages('shinydashboardPlus')"
 RUN Rscript -e "install.packages('leaflet')"
 
+RUN Rscript -e "install.packages('timevis')"
+RUN Rscript -e "install.packages('sf')"
+
+
+
 
 ## install processing R-packages
 
