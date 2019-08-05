@@ -13,7 +13,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libcurl4-openssl-dev \
 	libssl-dev \
 	libmagick++-dev \
-        libudunits2-dev
+        libudunits2-dev \
+        libgdal-dev
+        
 
 ## install presentation R-packages
 RUN Rscript -e "install.packages('tcltk')"
