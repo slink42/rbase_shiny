@@ -14,7 +14,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libssl-dev \
 	libmagick++-dev \
         libudunits2-dev \
-        libgdal-dev
+        libgdal-dev \
+        tcl8.5-dev \
+        tk8.5-dev
         
 
 ## install presentation R-packages
