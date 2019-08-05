@@ -12,7 +12,10 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	unixodbc-dev \
 	libcurl4-openssl-dev \
 	libssl-dev \
-	libmagick++-dev
+	libmagick++-dev \
+        libudunits2-dev \
+        libgdal-dev
+        
 
 ## install presentation R-packages
 RUN Rscript -e "install.packages('tcltk')"
@@ -43,6 +46,11 @@ RUN Rscript -e "install.packages('highcharter')"
 RUN Rscript -e "install.packages('purrr')"
 RUN Rscript -e "install.packages('shinydashboardPlus')"
 RUN Rscript -e "install.packages('leaflet')"
+
+RUN Rscript -e "install.packages('timevis')"
+RUN Rscript -e "install.packages('sf')"
+
+
 
 
 ## install processing R-packages
