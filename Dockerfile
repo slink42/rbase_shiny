@@ -12,7 +12,12 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	unixodbc-dev \
 	libcurl4-openssl-dev \
 	libssl-dev \
-	libmagick++-dev
+	libmagick++-dev \
+        libudunits2-dev \
+        libgdal-dev \
+        tcl8.5-dev \
+        tk8.5-dev
+        
 
 ## install presentation R-packages
 RUN Rscript -e "install.packages('tcltk')"
