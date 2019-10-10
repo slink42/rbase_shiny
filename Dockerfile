@@ -14,7 +14,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 	libssl-dev \
 	libmagick++-dev \
         libudunits2-dev \
-        libgdal-dev
+        libgdal-dev \
+        tcl8.5-dev \
+        tk8.5-dev
         
 
 ## install presentation R-packages
@@ -49,7 +51,9 @@ RUN Rscript -e "install.packages('leaflet')"
 
 RUN Rscript -e "install.packages('timevis')"
 RUN Rscript -e "install.packages('sf')"
-
+RUN Rscript -e "install.packages('leaflet.extras')"
+RUN Rscript -e "install.packages('writexl')"
+RUN Rscript -e "install.packages('wkb')"
 
 
 
@@ -77,6 +81,7 @@ RUN Rscript -e "install.packages('janitor')"
 RUN Rscript -e "install.packages('pool')"
 RUN Rscript -e "install.packages('googleAuthR')"
 RUN Rscript -e "install.packages('dotenv')"
+RUN Rscript -e "install.packages('slackr')"
 
 
 ## create directories
