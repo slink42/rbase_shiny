@@ -81,6 +81,7 @@ RUN Rscript -e "install.packages('janitor')"
 RUN Rscript -e "install.packages('pool')"
 RUN Rscript -e "install.packages('googleAuthR')"
 RUN Rscript -e "install.packages('dotenv')"
+RUN Rscript -e "install.packages('slackr')"
 
 
 ## create directories
