@@ -54,7 +54,7 @@ RUN Rscript -e "install.packages('sf')"
 RUN Rscript -e "install.packages('leaflet.extras')"
 RUN Rscript -e "install.packages('writexl')"
 RUN Rscript -e "install.packages('wkb')"
-
+RUN Rscript -e "install.packages('shinycssloaders')"
 
 
 ## install processing R-packages
@@ -82,6 +82,9 @@ RUN Rscript -e "install.packages('pool')"
 RUN Rscript -e "install.packages('googleAuthR')"
 RUN Rscript -e "install.packages('dotenv')"
 RUN Rscript -e "install.packages('slackr')"
+
+
+
 
 
 ## create directories
