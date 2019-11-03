@@ -1,11 +1,9 @@
-# rbase_shiny
-
 # [slink42/rbase_shiny](https://github.com/slink42/rbase_shiny)
 
-# Description
+## Description
 rocker/rbase docker image with a selection of packages preinstalled geared to support R-Shiny based webapp.
 
-# Usage
+## Usage
 
 Here are some example snippets to help you get started creating a container.
 
@@ -55,62 +53,61 @@ Container images are configured using parameters passed at runtime (such as thos
 
 
 ## Preinstalled Packages
-* aws.s3
-* caret
-* data.table
-* DataExplorer
-* DBI
-* devtools
-* dotenv
-* dplyr
-* DT
-* dygraphs 
-* forcats
-* formattable
-* glue
-* googleAuthR
-* highcharter
-* httr
-* ipred
-* janitor
-* jsonlite
-* leaflet
-* leaflet.extras
-* lubridate
-* magick
-* magrittr
-* Metrics
-* plotly
-* plotly
-* pool
-* purrr
-* randomForest
-* rattle
-* readr
-* readxl
-* RMySQL
-* rpart
-* rpart.plot
-* scales #
-* sf
-* shiny
-* shinycssloaders
-* shinycssloaders
-* shinydashboard
-* shinydashboardPlus
-* shinyjs
-* shinyWidgets
-* skimr
-* slackr
-* summarytools
-* summarytools
-* tcltk
-* tibbletime
-* tidyverse
-* timevis
-* tmaptools
-* vtreat
-* wkb
-* writexl
-* xgboost
-* xts
+
+* aws.s3
+* caret
+* data.table
+* DataExplorer
+* DBI
+* devtools
+* dotenv
+* dplyr
+* DT
+* dygraphs 
+* forcats
+* formattable
+* glue
+* googleAuthR
+* highcharter
+* httr
+* ipred
+* janitor
+* jsonlite
+* leaflet
+* leaflet.extras
+* lubridate
+* magick
+* magrittr
+* Metrics
+* plotly
+* pool
+* purrr
+* randomForest
+* rattle
+* readr
+* readxl
+* RMySQL
+* rpart
+* rpart.plot
+* scales #
+* sf
+* shiny
+* shinycssloaders
+* shinycssloaders
+* shinydashboard
+* shinydashboardPlus
+* shinyjs
+* shinyWidgets
+* skimr
+* slackr
+* summarytools
+* tcltk
+* tibbletime
+* tidyverse
+* timevis
+* tmaptools
+* vtreat
+* wkb
+* writexl
+* xgboost
+* xts
