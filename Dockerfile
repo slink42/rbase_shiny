@@ -82,9 +82,8 @@ RUN Rscript -e "install.packages('pool')"
 RUN Rscript -e "install.packages('googleAuthR')"
 RUN Rscript -e "install.packages('dotenv')"
 RUN Rscript -e "install.packages('slackr')"
-
-
-
+RUN Rscript -e "install.packages('tibbletime')"
+RUN Rscript -e "install.packages('tmaptools')"
 
 
 ## create directories
