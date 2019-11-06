@@ -20,6 +20,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
         
 
 ## install presentation R-packages
+# RUN Rscript -e "my_packages <- c('tcltk','devtools')
+# lapply(my_packages, library, character.only = TRUE)"
+
 RUN Rscript -e "install.packages('tcltk')"
 RUN Rscript -e "install.packages('devtools')"
 RUN Rscript -e "install.packages('summarytools')"
@@ -83,10 +86,20 @@ RUN Rscript -e "install.packages('slackr')"
 RUN Rscript -e "install.packages('tibbletime')"
 RUN Rscript -e "install.packages('tmaptools')"
 
+RUN Rscript -e "install.packages('auth0')"
+RUN Rscript -e "install.packages('shinyjqui')"
+RUN Rscript -e "install.packages('shinyAce')"
+RUN Rscript -e "install.packages('styler')"
+RUN Rscript -e "install.packages('shinyEffects')"
+
+
+
 
 ## create directories
-RUN mkdir -p /01_input ; \
+RUN mkdir -p /data ; \
+    mkdir -p /01_input ; \
     mkdir -p /02_code ; \
+	mkdir -p /02_code ; \
 	ln -s /tmp /03_staging ; \
 	mkdir -p /04_output ; \
 	mkdir -p /05_logs ;\
