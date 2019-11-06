@@ -1,7 +1,7 @@
-# [slink42/rbase_shiny](https://github.com/slink42/rbase_shiny)
+# [Artificially-Intelligent/shiny](https://github.com/Artificially-Intelligent/shiny)
 
 ## Description
-rocker/rbase docker image with a selection of packages preinstalled geared to support R-Shiny based webapp.
+rocker/rbase docker image with a selection of packages preinstalled geared to support R-Shiny based webapps.
 
 ## Usage
 
