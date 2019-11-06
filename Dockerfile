@@ -102,7 +102,8 @@ RUN mkdir -p /data ; \
 	mkdir -p /02_code ; \
 	ln -s /tmp /03_staging ; \
 	mkdir -p /04_output ; \
-	mkdir -p /05_logs ;\
+	mkdir -p /var/log/shiny-server ;\
+	ln -s /var/log/shiny-server /05_logs ;\
 	rm -r /srv/shiny-server 
 
 
